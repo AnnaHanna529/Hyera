@@ -1,0 +1,11 @@
+C:\Users\Анна\Documents\Приложение\bin\Release\Приложение.exe.config
+C:\Users\Анна\Documents\Приложение\bin\Release\Приложение.exe
+C:\Users\Анна\Documents\Приложение\bin\Release\Приложение.pdb
+C:\Users\Анна\Documents\Приложение\obj\Release\Приложение.csproj.AssemblyReference.cache
+C:\Users\Анна\Documents\Приложение\obj\Release\Приложение.Form1.resources
+C:\Users\Анна\Documents\Приложение\obj\Release\Приложение.Form2.resources
+C:\Users\Анна\Documents\Приложение\obj\Release\Приложение.Properties.Resources.resources
+C:\Users\Анна\Documents\Приложение\obj\Release\Приложение.csproj.GenerateResource.cache
+C:\Users\Анна\Documents\Приложение\obj\Release\Приложение.csproj.CoreCompileInputs.cache
+C:\Users\Анна\Documents\Приложение\obj\Release\Приложение.exe
+C:\Users\Анна\Documents\Приложение\obj\Release\Приложение.pdb

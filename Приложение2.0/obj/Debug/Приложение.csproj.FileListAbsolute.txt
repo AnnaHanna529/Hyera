@@ -1,0 +1,87 @@
+C:\Users\Анна\Documents\Приложение\bin\Debug\Приложение.exe.config
+C:\Users\Анна\Documents\Приложение\bin\Debug\Приложение.exe
+C:\Users\Анна\Documents\Приложение\bin\Debug\Приложение.pdb
+C:\Users\Анна\Documents\Приложение\obj\Debug\Приложение.csproj.AssemblyReference.cache
+C:\Users\Анна\Documents\Приложение\obj\Debug\Приложение.Form1.resources
+C:\Users\Анна\Documents\Приложение\obj\Debug\Приложение.Form2.resources
+C:\Users\Анна\Documents\Приложение\obj\Debug\Приложение.Properties.Resources.resources
+C:\Users\Анна\Documents\Приложение\obj\Debug\Приложение.csproj.GenerateResource.cache
+C:\Users\Анна\Documents\Приложение\obj\Debug\Приложение.csproj.CoreCompileInputs.cache
+C:\Users\Анна\Documents\Приложение\obj\Debug\Приложение.exe
+C:\Users\Анна\Documents\Приложение\obj\Debug\Приложение.pdb
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\bin\Debug\Приложение.exe.config
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\bin\Debug\Приложение.exe
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\bin\Debug\Приложение.pdb
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.csproj.AssemblyReference.cache
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.csproj.SuggestedBindingRedirects.cache
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.Form1.resources
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.Properties.Resources.resources
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.csproj.GenerateResource.cache
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.csproj.CoreCompileInputs.cache
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.exe
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.pdb
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.AdminForm.resources
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.user.resources
+S:\USERS\52-03\Михайлова Анна Сергеевна\Приложение_1\Приложение\obj\Debug\Приложение.register.resources
+C:\Users\Анна\Desktop\Приложение_13\Приложение\obj\Debug\Приложение.csproj.AssemblyReference.cache
+C:\Users\Анна\Desktop\Приложение_13\Приложение\obj\Debug\Приложение.AdminForm.resources
+C:\Users\Анна\Desktop\Приложение_13\Приложение\obj\Debug\Приложение.user.resources
+C:\Users\Анна\Desktop\Приложение_13\Приложение\obj\Debug\Приложение.Form1.resources
+C:\Users\Анна\Desktop\Приложение_13\Приложение\obj\Debug\Приложение.register.resources
+C:\Users\Анна\Desktop\Приложение_13\Приложение\obj\Debug\Приложение.Properties.Resources.resources
+C:\Users\Анна\Desktop\Приложение_13\Приложение\obj\Debug\Приложение.csproj.GenerateResource.cache
+C:\Users\Анна\Desktop\Приложение_13\Приложение\obj\Debug\Приложение.csproj.CoreCompileInputs.cache
+C:\Users\Анна\Desktop\Приложение_13\Приложение\obj\Debug\Приложение.exe
+C:\Users\Анна\Desktop\Приложение_13\Приложение\obj\Debug\Приложение.pdb
+C:\Users\Анна\Desktop\Приложение2.0\obj\Debug\Приложение.csproj.AssemblyReference.cache
+C:\Users\Анна\Desktop\Приложение2.0\obj\Debug\Приложение.AdminForm.resources
+C:\Users\Анна\Desktop\Приложение2.0\obj\Debug\Приложение.user.resources
+C:\Users\Анна\Desktop\Приложение2.0\obj\Debug\Приложение.Form1.resources
+C:\Users\Анна\Desktop\Приложение2.0\obj\Debug\Приложение.register.resources
+C:\Users\Анна\Desktop\Приложение2.0\obj\Debug\Приложение.Properties.Resources.resources
+C:\Users\Анна\Desktop\Приложение2.0\obj\Debug\Приложение.csproj.GenerateResource.cache
+C:\Users\Анна\Desktop\Приложение2.0\obj\Debug\Приложение.csproj.CoreCompileInputs.cache
+C:\Users\Анна\Desktop\Приложение2.0\obj\Debug\Приложение.exe
+C:\Users\Анна\Desktop\Приложение2.0\obj\Debug\Приложение.pdb
+C:\Users\Анна\Desktop\Приложение2.0\bin\Debug\Приложение.exe.config
+C:\Users\Анна\Desktop\Приложение2.0\bin\Debug\Приложение.exe
+C:\Users\Анна\Desktop\Приложение2.0\bin\Debug\Приложение.pdb
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\bin\Debug\Приложение.exe.config
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\bin\Debug\Приложение.exe
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\bin\Debug\Приложение.pdb
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\obj\Debug\Приложение.csproj.AssemblyReference.cache
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\obj\Debug\Приложение.AdminForm.resources
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\obj\Debug\Приложение.user.resources
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\obj\Debug\Приложение.Form1.resources
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\obj\Debug\Приложение.register.resources
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\obj\Debug\Приложение.Properties.Resources.resources
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\obj\Debug\Приложение.csproj.GenerateResource.cache
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\obj\Debug\Приложение.csproj.CoreCompileInputs.cache
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\obj\Debug\Приложение.exe
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\obj\Debug\Приложение.pdb
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\bin\Debug\Приложение.exe.config
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\bin\Debug\Приложение.exe
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\bin\Debug\Приложение.pdb
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\obj\Debug\Приложение.csproj.AssemblyReference.cache
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\obj\Debug\Приложение.AdminForm.resources
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\obj\Debug\Приложение.user.resources
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\obj\Debug\Приложение.Form1.resources
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\obj\Debug\Приложение.register.resources
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\obj\Debug\Приложение.Properties.Resources.resources
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\obj\Debug\Приложение.csproj.GenerateResource.cache
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\obj\Debug\Приложение.csproj.CoreCompileInputs.cache
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\obj\Debug\Приложение.exe
+C:\Users\10230121\Downloads\Приложение2_1\Приложение2.0\obj\Debug\Приложение.pdb
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\bin\Debug\Приложение.exe.config
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\bin\Debug\Приложение.exe
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\bin\Debug\Приложение.pdb
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\obj\Debug\Приложение.csproj.AssemblyReference.cache
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\obj\Debug\Приложение.AdminForm.resources
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\obj\Debug\Приложение.user.resources
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\obj\Debug\Приложение.Form1.resources
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\obj\Debug\Приложение.register.resources
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\obj\Debug\Приложение.Properties.Resources.resources
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\obj\Debug\Приложение.csproj.GenerateResource.cache
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\obj\Debug\Приложение.csproj.CoreCompileInputs.cache
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\obj\Debug\Приложение.exe
+C:\Users\10230121\Downloads\Приложение2\Приложение2.0\Приложение2.0\obj\Debug\Приложение.pdb
