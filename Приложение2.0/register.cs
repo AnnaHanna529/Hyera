@@ -60,6 +60,27 @@ namespace Приложение
                 return;
             }
 
+            // Проверка на корректность email
+            if (!System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("Введите корректный email!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Проверка на корректность номера телефона (только цифры, длина 10-15 символов)
+            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^\d{10,15}$"))
+            {
+                MessageBox.Show("Введите корректный номер телефона (только цифры, от 10 до 15 символов)!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Проверка на корректность почтового индекса (только цифры)
+            if (!System.Text.RegularExpressions.Regex.IsMatch(zipCode, @"^\d+$"))
+            {
+                MessageBox.Show("Введите корректный почтовый индекс (только цифры)!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 // Открытие соединения

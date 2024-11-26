@@ -84,7 +84,7 @@ namespace Приложение
             // Добавление макета на форму
             this.Controls.Add(layout);
         }
-    
+
 
         public user(string login)
         {
@@ -123,11 +123,22 @@ namespace Приложение
             dataGridViewUser.DefaultCellStyle.Font = new Font("Times New Roman", 14);
             dataGridViewUser.DefaultCellStyle.ForeColor = Color.Black; // Цвет текста
 
-
             // Настройка прозрачности
             dataGridViewUser.BackgroundColor = this.BackColor; // Установить фон такой же, как у формы
 
+            // Отключение редактирования
+            dataGridViewUser.ReadOnly = true;
 
+            // Отключение выделения отдельных ячеек
+            dataGridViewUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewUser.AllowUserToAddRows = false; // Отключить добавление строк
+            dataGridViewUser.AllowUserToDeleteRows = false; // Отключить удаление строк
+            dataGridViewUser.AllowUserToResizeColumns = false; // Отключить изменение размеров колонок
+            dataGridViewUser.AllowUserToResizeRows = false; // Отключить изменение размеров строк
+
+            // Отключение визуального выделения
+            dataGridViewUser.DefaultCellStyle.SelectionBackColor = dataGridViewUser.DefaultCellStyle.BackColor;
+            dataGridViewUser.DefaultCellStyle.SelectionForeColor = dataGridViewUser.DefaultCellStyle.ForeColor;
         }
         private void GetCurrentCustomerId()
         {
