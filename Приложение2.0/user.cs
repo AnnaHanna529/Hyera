@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Приложение
 {
@@ -34,17 +35,29 @@ namespace Приложение
             search.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             Filtar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
+            // Создание панели для кнопок управления
+            var buttonPanel = new FlowLayoutPanel
+            {
+                Dock = DockStyle.Bottom,
+                FlowDirection = FlowDirection.LeftToRight,
+                AutoSize = true,
+                Padding = new Padding(10),
+                WrapContents = false
+            };
+
+            buttonPanel.Controls.Add(Back); // Добавляем кнопку "Назад"
+
             // Создание основного макета
             var layout = new TableLayoutPanel
             {
                 Dock = DockStyle.Fill,
                 ColumnCount = 1,
-                RowCount = 4 // Увеличиваем количество строк для кнопки Back
+                RowCount = 4
             };
             layout.RowStyles.Add(new RowStyle(SizeType.Percent, 10)); // Верхний блок
             layout.RowStyles.Add(new RowStyle(SizeType.Percent, 10)); // Фильтры и поиск
-            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 75)); // Таблица
-            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 5)); // Кнопка Back
+            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 70)); // Таблица
+            layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));    // Кнопки управления
 
             // Панель для фильтров
             var filterPanel = new FlowLayoutPanel
@@ -53,9 +66,9 @@ namespace Приложение
                 AutoSize = true,
                 FlowDirection = FlowDirection.LeftToRight
             };
-            filterPanel.Controls.Add(tables); // ComboBox для таблиц
-            filterPanel.Controls.Add(search); // Поле для поиска
-            filterPanel.Controls.Add(Filtar); // ComboBox для фильтров
+            filterPanel.Controls.Add(tables);
+            filterPanel.Controls.Add(search);
+            filterPanel.Controls.Add(Filtar);
 
             // Добавление элементов в макет
             layout.Controls.Add(new Label
@@ -63,21 +76,18 @@ namespace Приложение
                 Text = "User Panel",
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new Font("Arial", 16, FontStyle.Bold)
-            }, 0, 0); // Заголовок
-            layout.Controls.Add(filterPanel, 0, 1); // Фильтры и поиск
-            layout.Controls.Add(dataGridViewUser, 0, 2); // Таблица
-
-            // Перемещаем кнопку Back под таблицу
-            Back.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            Back.TextAlign = ContentAlignment.MiddleCenter;
-            layout.Controls.Add(Back, 0, 3); // Добавление кнопки Back в последнюю строку макета
+            }, 0, 0);
+            layout.Controls.Add(filterPanel, 0, 1);
+            layout.Controls.Add(dataGridViewUser, 0, 2);
+            layout.Controls.Add(buttonPanel, 0, 3);
 
             // Добавление макета на форму
             this.Controls.Add(layout);
         }
+    
 
         public user(string login)
-        {   
+        {
             InitializeComponent();
             ConfigureLayout();
             currentUserLogin = login;
@@ -113,21 +123,11 @@ namespace Приложение
             dataGridViewUser.DefaultCellStyle.Font = new Font("Times New Roman", 14);
             dataGridViewUser.DefaultCellStyle.ForeColor = Color.Black; // Цвет текста
 
-            // Установка прозрачности
+
+            // Настройка прозрачности
             dataGridViewUser.BackgroundColor = this.BackColor; // Установить фон такой же, как у формы
 
-            // Запретить выделение строк и ячеек
-            dataGridViewUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Режим выделения всей строки
-            dataGridViewUser.ReadOnly = true; // Таблица только для чтения
-            dataGridViewUser.AllowUserToAddRows = false; // Запрет на добавление строк
-            dataGridViewUser.AllowUserToDeleteRows = false; // Запрет на удаление строк
-            dataGridViewUser.AllowUserToResizeColumns = false; // Запрет на изменение размера столбцов
-            dataGridViewUser.AllowUserToResizeRows = false; // Запрет на изменение размера строк
-            dataGridViewUser.MultiSelect = false; // Запрет на выбор нескольких строк
-            dataGridViewUser.RowHeadersVisible = false; // Скрыть заголовки строк
 
-            // Отключить события клика по ячейкам
-            dataGridViewUser.CellClick += (s, e) => { e = null; }; // Игнорируем клики по ячейкам
         }
         private void GetCurrentCustomerId()
         {
@@ -212,7 +212,7 @@ namespace Приложение
                     Filtar.Items.Add("Photo");
                     Filtar.Items.Add("JBL Bluetooth Speaker");
                     Filtar.Items.Add("Watch ");
-    
+
                     Filtar.Visible = true; // Отображаем ComboBox фильтра
                 }
                 else
@@ -257,14 +257,10 @@ namespace Приложение
                 dataAdapter.Fill(dataTable);
                 dataGridViewUser.DataSource = dataTable;
 
-                // Настройка отображения DataGridView
-                dataGridViewUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Растягиваем столбцы на всю ширину
-                dataGridViewUser.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                // Установка автоматической ширины столбцов
+                dataGridViewUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                dataGridViewUser.DefaultCellStyle.Font = new Font("Times New Roman", 14);
-                dataGridViewUser.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 14, FontStyle.Bold);
-
-                // Скрытие столбцов с ID
+                // Скрытие столбцов с "ID" в названии
                 foreach (DataGridViewColumn column in dataGridViewUser.Columns)
                 {
                     if (column.Name.ToLower().Contains("id"))
@@ -272,6 +268,10 @@ namespace Приложение
                         column.Visible = false;
                     }
                 }
+
+                // Настройка стилей
+                dataGridViewUser.DefaultCellStyle.Font = new Font("Times New Roman", 14);
+                dataGridViewUser.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 14, FontStyle.Bold);
             }
             catch (Exception ex)
             {
@@ -330,68 +330,59 @@ namespace Приложение
 
         private void Filtar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Filtar.SelectedItem != null)
+            DataTable dataTable = (DataTable)dataGridViewUser.DataSource;
+
+            if (dataTable != null)
             {
                 string selectedFilter = Filtar.SelectedItem.ToString();
-                string selectedTable = tables.SelectedItem?.ToString();
 
-                if (string.IsNullOrEmpty(selectedTable) || selectedTable == "Сбросить таблицу")
+                if (selectedFilter == "All")
                 {
-                    MessageBox.Show("Сначала выберите таблицу для фильтрации.");
-                    return;
+                    // Сбрасываем фильтр
+                    dataTable.DefaultView.RowFilter = string.Empty;
                 }
-
-                try
+                else
                 {
-                    sqlConnection.Open();
+                    string filterExpression = "";
 
-                    string query;
-
-                    // Пример фильтрации на основе выбранного фильтра
-                    switch (selectedTable)
+                    if (tables.SelectedItem.ToString() == "Payments")
                     {
-                        case "Orders":
-                            query = $"SELECT * FROM Orders WHERE Status = @FilterValue AND CustomerID = @CustomerID";
-                            break;
-
-                        case "Product":
-                            query = $"SELECT * FROM Product WHERE CategoryID = @FilterValue";
-                            break;
-
-                        default:
-                            query = $"SELECT * FROM [{selectedTable}]";
-                            break;
+                        filterExpression = $"PaymentMethod LIKE '%{selectedFilter}%'";
+                    }
+                    else if (tables.SelectedItem.ToString() == "Category")
+                    {
+                        filterExpression = $"CategoryName LIKE '%{selectedFilter}%'";
+                    }
+                    else if (tables.SelectedItem.ToString() == "Product")
+                    {
+                        // Универсальный фильтр для поиска слов в ProductName
+                        filterExpression = $"ProductName LIKE '%{selectedFilter}%'";
+                    }
+                    else if (tables.SelectedItem.ToString() == "OrderItems")
+                    {
+                        if (selectedFilter == "UnitPrice < 1500")
+                        {
+                            filterExpression = "UnitPrice < 1500";
+                        }
+                        else if (selectedFilter == "UnitPrice >= 2500")
+                        {
+                            filterExpression = "UnitPrice >= 2500";
+                        }
                     }
 
-                    SqlCommand command = new SqlCommand(query, sqlConnection);
-                    if (query.Contains("@FilterValue"))
+                    if (!string.IsNullOrEmpty(filterExpression))
                     {
-                        command.Parameters.AddWithValue("@FilterValue", selectedFilter); // Передача значения фильтра
+                        try
+                        {
+                            dataTable.DefaultView.RowFilter = filterExpression;
+                            Console.WriteLine($"Filter applied: {filterExpression}");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Ошибка при применении фильтра: {ex.Message}");
+                        }
                     }
-
-                    if (query.Contains("@CustomerID"))
-                    {
-                        command.Parameters.AddWithValue("@CustomerID", currentCustomerId); // Передача CustomerID, если требуется
-                    }
-
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-                    DataTable dataTable = new DataTable();
-                    dataAdapter.Fill(dataTable);
-
-                    dataGridViewUser.DataSource = dataTable;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Ошибка при применении фильтра: {ex.Message}");
-                }
-                finally
-                {
-                    sqlConnection.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Выберите значение фильтра.");
             }
         }
 
