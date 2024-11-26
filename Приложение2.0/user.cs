@@ -113,11 +113,21 @@ namespace Приложение
             dataGridViewUser.DefaultCellStyle.Font = new Font("Times New Roman", 14);
             dataGridViewUser.DefaultCellStyle.ForeColor = Color.Black; // Цвет текста
 
-
-            // Настройка прозрачности
+            // Установка прозрачности
             dataGridViewUser.BackgroundColor = this.BackColor; // Установить фон такой же, как у формы
 
+            // Запретить выделение строк и ячеек
+            dataGridViewUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Режим выделения всей строки
+            dataGridViewUser.ReadOnly = true; // Таблица только для чтения
+            dataGridViewUser.AllowUserToAddRows = false; // Запрет на добавление строк
+            dataGridViewUser.AllowUserToDeleteRows = false; // Запрет на удаление строк
+            dataGridViewUser.AllowUserToResizeColumns = false; // Запрет на изменение размера столбцов
+            dataGridViewUser.AllowUserToResizeRows = false; // Запрет на изменение размера строк
+            dataGridViewUser.MultiSelect = false; // Запрет на выбор нескольких строк
+            dataGridViewUser.RowHeadersVisible = false; // Скрыть заголовки строк
 
+            // Отключить события клика по ячейкам
+            dataGridViewUser.CellClick += (s, e) => { e = null; }; // Игнорируем клики по ячейкам
         }
         private void GetCurrentCustomerId()
         {
