@@ -44,6 +44,8 @@ namespace Приложение
             // Проверка для администратора
             if (login == "admin" && password == "admin")
             {
+                MessageBox.Show("Вы успешно зашли как Администратор!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 AdminForm adminForm = new AdminForm(); // Форма для администратора
                 adminForm.Show();
                 this.Hide();
@@ -57,17 +59,21 @@ namespace Приложение
                 {
                     sqlConnection.Open();
 
-                    string query = "SELECT COUNT(*) FROM Customers WHERE Login = @Login AND Password = @Password";
+                    string query = "SELECT FirstName FROM Customers WHERE Login = @Login AND Password = @Password";
                     using (SqlCommand command = new SqlCommand(query, sqlConnection))
                     {
                         command.Parameters.AddWithValue("@Login", login);
                         command.Parameters.AddWithValue("@Password", password);
 
-                        int userExists = (int)command.ExecuteScalar();
+                        // Проверка, есть ли пользователь
+                        object result = command.ExecuteScalar();
 
-                        if (userExists > 0)
+                        if (result != null) // Если пользователь найден
                         {
-                            // Пользователь найден, передаем логин в форму user
+                            string userName = result.ToString(); // Получаем имя пользователя
+                            MessageBox.Show($"Вы успешно зашли как {userName}!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Переход на форму пользователя
                             user userForm = new user(login); // Передаем логин
                             userForm.Show();
                             this.Hide();

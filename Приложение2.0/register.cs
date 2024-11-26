@@ -45,10 +45,10 @@ namespace Приложение
             string lastName = textBoxLastName.Text.Trim();
             string email = textBoxEmail.Text.Trim();
             string city = textBoxCity.Text.Trim();
-            string zipCode = textBoxIndex.Text.Trim(); // Предполагается, что Index — это ZipCode
+            string zipCode = textBoxIndex.Text.Trim();
             string login = textBoxLogin.Text.Trim();
             string password = textBoxPassword.Text.Trim();
-            string phone = textBoxNum.Text.Trim(); // Предполагается, что Number — это Phone
+            string phone = textBoxNum.Text.Trim();
             string address = textBoxAdr.Text.Trim();
 
             // Проверка заполнения полей
@@ -85,6 +85,21 @@ namespace Приложение
             {
                 // Открытие соединения
                 sqlConnection.Open();
+
+                // Проверка на существование логина или email в базе данных
+                string checkQuery = "SELECT COUNT(*) FROM Customers WHERE Login = @Login OR Email = @Email";
+                using (SqlCommand checkCommand = new SqlCommand(checkQuery, sqlConnection))
+                {
+                    checkCommand.Parameters.AddWithValue("@Login", login);
+                    checkCommand.Parameters.AddWithValue("@Email", email);
+
+                    int count = (int)checkCommand.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Логин или email уже зарегистрированы!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
 
                 // SQL-запрос для добавления данных
                 string query = "INSERT INTO Customers (FirstName, LastName, Email, City, ZipCode, Login, Password, Phone, Address) " +

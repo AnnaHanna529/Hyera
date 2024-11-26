@@ -18,10 +18,10 @@ namespace Приложение
         private string currentUserLogin; // Логин текущего пользователя
         private int currentCustomerId; // ID текущего пользователя
 
-        private void ConfigureLayout()
+        private void ConfigureLayout(string userName)
         {
             // Установка стиля формы
-            this.Text = "User Panel";
+            this.Text = $"{userName}"; // Устанавливаем имя пользователя в заголовок
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Size = new Size(800, 600);
 
@@ -73,7 +73,7 @@ namespace Приложение
             // Добавление элементов в макет
             layout.Controls.Add(new Label
             {
-                Text = "User Panel",
+                Text = $"{userName}'s Panel", // Отображаем имя пользователя
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new Font("Arial", 16, FontStyle.Bold)
             }, 0, 0);
@@ -85,12 +85,42 @@ namespace Приложение
             this.Controls.Add(layout);
         }
 
+        private string GetUserName()
+        {
+            try
+            {
+                sqlConnection.Open();
+                string query = "SELECT FirstName FROM Customers WHERE Login = @Login";
+                SqlCommand command = new SqlCommand(query, sqlConnection);
+                command.Parameters.AddWithValue("@Login", currentUserLogin);
+
+                var result = command.ExecuteScalar();
+                return result != null ? result.ToString() : "User";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при получении имени пользователя: {ex.Message}");
+                return "User";
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+
 
         public user(string login)
         {
             InitializeComponent();
-            ConfigureLayout();
+
             currentUserLogin = login;
+
+            // Получаем имя пользователя из базы
+            string userName = GetUserName();
+
+            // Конфигурируем макет с именем пользователя
+            ConfigureLayout(userName);
 
             // Инициализация DataGridView
             InitializeDataGridView();
@@ -113,6 +143,7 @@ namespace Приложение
             // Скрываем ComboBox Filtar при загрузке формы
             Filtar.Visible = false;
         }
+
         private void InitializeDataGridView()
         {
             // Общие настройки DataGridView
