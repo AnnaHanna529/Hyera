@@ -1,4 +1,4 @@
-﻿namespace Приложение
+﻿namespace ElectronicsStore
 {
     partial class user
     {
@@ -30,7 +30,7 @@
         {
             this.dataGridViewUser = new System.Windows.Forms.DataGridView();
             this.tables = new System.Windows.Forms.ComboBox();
-            this.electronicsDataSet = new Приложение.ElectronicsDataSet();
+            this.electronicsDataSet = new ElectronicsStore.ElectronicsDataSet();
             this.Back = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.TextBox();
             this.Filtar = new System.Windows.Forms.ComboBox();

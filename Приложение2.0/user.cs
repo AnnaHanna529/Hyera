@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Приложение
+namespace ElectronicsStore
 {
     public partial class user : Form
     {

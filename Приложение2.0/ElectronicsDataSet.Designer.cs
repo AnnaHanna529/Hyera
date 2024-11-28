@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Приложение {
+namespace ElectronicsStore {
     
     
     /// <summary>
@@ -5408,7 +5408,7 @@ namespace Приложение {
         }
     }
 }
-namespace Приложение.ElectronicsDataSetTableAdapters {
+namespace ElectronicsStore.ElectronicsDataSetTableAdapters {
     
     
     /// <summary>
@@ -5572,7 +5572,7 @@ SELECT CategoryID, CategoryName, Description FROM Category WHERE (CategoryID = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Приложение.Properties.Settings.Default.ElectronicsConnectionString;
+            this._connection.ConnectionString = global::ElectronicsStore.Properties.Settings.Default.ElectronicsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5970,7 +5970,7 @@ SELECT CustomerID, FirstName, LastName, Email, Phone, Address, City, ZipCode, Lo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Приложение.Properties.Settings.Default.ElectronicsConnectionString;
+            this._connection.ConnectionString = global::ElectronicsStore.Properties.Settings.Default.ElectronicsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6577,7 +6577,7 @@ SELECT DeliveryID, SupplierID, DeliveryDate, TotalCost FROM Deliveries WHERE (De
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Приложение.Properties.Settings.Default.ElectronicsConnectionString;
+            this._connection.ConnectionString = global::ElectronicsStore.Properties.Settings.Default.ElectronicsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6918,7 +6918,7 @@ SELECT InventoryID, WarehouseID, ProductID, Quantity FROM Inventory WHERE (Inven
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Приложение.Properties.Settings.Default.ElectronicsConnectionString;
+            this._connection.ConnectionString = global::ElectronicsStore.Properties.Settings.Default.ElectronicsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7241,7 +7241,7 @@ SELECT OrderItemID, OrderID, ProductID, Quantity, UnitPrice FROM OrderItems WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Приложение.Properties.Settings.Default.ElectronicsConnectionString;
+            this._connection.ConnectionString = global::ElectronicsStore.Properties.Settings.Default.ElectronicsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7585,7 +7585,7 @@ SELECT OrderID, CustomerID, OrderDate, Status, TotalAmount FROM Orders WHERE (Or
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Приложение.Properties.Settings.Default.ElectronicsConnectionString;
+            this._connection.ConnectionString = global::ElectronicsStore.Properties.Settings.Default.ElectronicsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7956,7 +7956,7 @@ SELECT PaymentID, OrderID, PaymentDate, Amount, PaymentMethod FROM Payments WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Приложение.Properties.Settings.Default.ElectronicsConnectionString;
+            this._connection.ConnectionString = global::ElectronicsStore.Properties.Settings.Default.ElectronicsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8301,7 +8301,7 @@ SELECT ProductID, ProductName, CategoryID, Price, WarrantyPeriod FROM Product WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Приложение.Properties.Settings.Default.ElectronicsConnectionString;
+            this._connection.ConnectionString = global::ElectronicsStore.Properties.Settings.Default.ElectronicsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8689,7 +8689,7 @@ SELECT SupplierID, SupplierName, ContactName, Phone, Address, City, ZipCode FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Приложение.Properties.Settings.Default.ElectronicsConnectionString;
+            this._connection.ConnectionString = global::ElectronicsStore.Properties.Settings.Default.ElectronicsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9154,7 +9154,7 @@ SELECT WarehouseID, WarehouseName, Location FROM Warehouse WHERE (WarehouseID = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Приложение.Properties.Settings.Default.ElectronicsConnectionString;
+            this._connection.ConnectionString = global::ElectronicsStore.Properties.Settings.Default.ElectronicsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

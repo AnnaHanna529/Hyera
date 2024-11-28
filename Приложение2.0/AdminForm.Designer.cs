@@ -1,4 +1,4 @@
-﻿namespace Приложение
+﻿namespace ElectronicsStore
 {
     partial class AdminForm
     {
@@ -30,26 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new Приложение.DataSet1();
-            this.categoryTableAdapter1 = new Приложение.ElectronicsDataSet1TableAdapters.CategoryTableAdapter();
+            this.dataSet1 = new ElectronicsStore.DataSet1();
+            this.categoryTableAdapter1 = new ElectronicsStore.ElectronicsDataSet1TableAdapters.CategoryTableAdapter();
             this.electronicsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.electronicsDataSet = new Приложение.ElectronicsDataSet();
+            this.electronicsDataSet = new ElectronicsStore.ElectronicsDataSet();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.warehouseTableAdapter1 = new Приложение.ElectronicsDataSetTableAdapters.WarehouseTableAdapter();
-            this.suppliersTableAdapter1 = new Приложение.ElectronicsDataSetTableAdapters.SuppliersTableAdapter();
-            this.productTableAdapter1 = new Приложение.ElectronicsDataSetTableAdapters.ProductTableAdapter();
-            this.paymentsTableAdapter1 = new Приложение.ElectronicsDataSetTableAdapters.PaymentsTableAdapter();
-            this.ordersTableAdapter1 = new Приложение.ElectronicsDataSetTableAdapters.OrdersTableAdapter();
-            this.orderItemsTableAdapter1 = new Приложение.ElectronicsDataSetTableAdapters.OrderItemsTableAdapter();
-            this.inventoryTableAdapter1 = new Приложение.ElectronicsDataSetTableAdapters.InventoryTableAdapter();
-            this.deliveriesTableAdapter1 = new Приложение.ElectronicsDataSetTableAdapters.DeliveriesTableAdapter();
-            this.customersTableAdapter1 = new Приложение.ElectronicsDataSetTableAdapters.CustomersTableAdapter();
-            this.categoryTableAdapter = new Приложение.ElectronicsDataSetTableAdapters.CategoryTableAdapter();
+            this.warehouseTableAdapter1 = new ElectronicsStore.ElectronicsDataSetTableAdapters.WarehouseTableAdapter();
+            this.suppliersTableAdapter1 = new ElectronicsStore.ElectronicsDataSetTableAdapters.SuppliersTableAdapter();
+            this.productTableAdapter1 = new ElectronicsStore.ElectronicsDataSetTableAdapters.ProductTableAdapter();
+            this.paymentsTableAdapter1 = new ElectronicsStore.ElectronicsDataSetTableAdapters.PaymentsTableAdapter();
+            this.ordersTableAdapter1 = new ElectronicsStore.ElectronicsDataSetTableAdapters.OrdersTableAdapter();
+            this.orderItemsTableAdapter1 = new ElectronicsStore.ElectronicsDataSetTableAdapters.OrderItemsTableAdapter();
+            this.inventoryTableAdapter1 = new ElectronicsStore.ElectronicsDataSetTableAdapters.InventoryTableAdapter();
+            this.deliveriesTableAdapter1 = new ElectronicsStore.ElectronicsDataSetTableAdapters.DeliveriesTableAdapter();
+            this.customersTableAdapter1 = new ElectronicsStore.ElectronicsDataSetTableAdapters.CustomersTableAdapter();
+            this.categoryTableAdapter = new ElectronicsStore.ElectronicsDataSetTableAdapters.CategoryTableAdapter();
             this.categoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.categoryBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.categoryBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.electronicsDataSet1 = new Приложение.ElectronicsDataSet1();
+            this.electronicsDataSet1 = new ElectronicsStore.ElectronicsDataSet1();
             this.customersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.categoryBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -63,6 +63,7 @@
             this.Update = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
+            this.electronicsDataSet2 = new ElectronicsStore.ElectronicsDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.electronicsDataSetBindingSource)).BeginInit();
@@ -78,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warehouseTableAdapterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.electronicsDataSetBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.electronicsDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataSet1BindingSource
@@ -197,7 +199,7 @@
             // 
             // warehouseTableAdapterBindingSource
             // 
-            this.warehouseTableAdapterBindingSource.DataSource = typeof(Приложение.ElectronicsDataSet1TableAdapters.WarehouseTableAdapter);
+            this.warehouseTableAdapterBindingSource.DataSource = typeof(ElectronicsStore.ElectronicsDataSet1TableAdapters.WarehouseTableAdapter);
             // 
             // comboBox1
             // 
@@ -293,6 +295,11 @@
             this.Add.UseVisualStyleBackColor = true;
             this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
+            // electronicsDataSet2
+            // 
+            this.electronicsDataSet2.DataSetName = "ElectronicsDataSet";
+            this.electronicsDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +332,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.warehouseTableAdapterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.electronicsDataSetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.electronicsDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,5 +373,6 @@
         private System.Windows.Forms.Button Update;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Add;
+        private ElectronicsDataSet electronicsDataSet2;
     }
 }

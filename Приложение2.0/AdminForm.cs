@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-namespace Приложение
+namespace ElectronicsStore
 {
     public partial class AdminForm : Form
     {
@@ -381,31 +381,49 @@ namespace Приложение
                     return;
                 }
 
-                // Предупреждение и запрос подтверждения
-                var result = MessageBox.Show(
-                    "Вы хотите включить режим редактирования? Изменения будут зафиксированы только после сохранения.",
-                    "Подтверждение редактирования",
-                    MessageBoxButtons.YesNoCancel,
-                    MessageBoxIcon.Question
-                );
-
-                // Обработка выбора пользователя
-                if (result == DialogResult.No || result == DialogResult.Cancel)
+                // Проверяем текущий режим DataGridView
+                if (!dataGridView1.ReadOnly)
                 {
-                    MessageBox.Show("Редактирование отменено.");
-                    return; // Если пользователь выбрал "Нет" или "Отмена", завершаем выполнение
+                    // Если редактирование включено, выключаем его
+                    var result = MessageBox.Show(
+                        "Вы хотите выйти из режима редактирования? Несохраненные изменения будут потеряны.",
+                        "Подтверждение выхода",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (result == DialogResult.Yes)
+                    {
+                        // Выходим из режима редактирования
+                        dataGridView1.ReadOnly = true;
+                        dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+                        MessageBox.Show("Режим редактирования выключен.");
+                    }
                 }
+                else
+                {
+                    // Если редактирование выключено, включаем его
+                    var result = MessageBox.Show(
+                        "Вы хотите включить режим редактирования? Изменения будут зафиксированы только после сохранения.",
+                        "Подтверждение редактирования",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
 
-                // Включаем редактирование ячеек
-                dataGridView1.ReadOnly = false; // Отключаем режим только для чтения
-                dataGridView1.AllowUserToAddRows = false; // Отключаем добавление новых строк через DataGridView
-                dataGridView1.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2; // Редактирование при нажатии клавиш или F2
+                    if (result == DialogResult.Yes)
+                    {
+                        // Включаем режим редактирования
+                        dataGridView1.ReadOnly = false;
+                        dataGridView1.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
 
-                MessageBox.Show("Редактирование включено. Измените данные и нажмите 'Сохранить изменения' для фиксации в базе данных.");
+                        MessageBox.Show("Режим редактирования включен.");
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при включении режима редактирования: {ex.Message}");
+                MessageBox.Show($"Ошибка при переключении режима редактирования: {ex.Message}");
             }
         }
         private void Back_Click(object sender, EventArgs e)

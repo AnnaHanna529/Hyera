@@ -1,4 +1,4 @@
-﻿namespace Приложение
+﻿namespace ElectronicsStore
 {
     partial class Form1
     {

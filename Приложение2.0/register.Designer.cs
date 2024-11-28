@@ -1,4 +1,4 @@
-﻿namespace Приложение
+﻿namespace ElectronicsStore
 {
     partial class register
     {
@@ -225,7 +225,7 @@
             this.Email.Size = new System.Drawing.Size(84, 31);
             this.Email.TabIndex = 45;
             this.Email.Text = "Почта";
-      
+
             // 
             // textBoxEmail
             // 
@@ -234,7 +234,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(241, 38);
             this.textBoxEmail.TabIndex = 46;
-          
+
             // 
             // register
             // 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace Приложение
+namespace ElectronicsStore
 {
     public partial class Form1 : Form
     {
@@ -21,7 +21,7 @@ namespace Приложение
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,36 +41,44 @@ namespace Приложение
             string login = textBox1.Text.Trim(); // Логин
             string password = textBox2.Text.Trim(); // Пароль
 
-            // Проверка для администратора
-            if (login == "admin" && password == "admin")
-            {
-                MessageBox.Show("Вы успешно зашли как Администратор!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                AdminForm adminForm = new AdminForm(); // Форма для администратора
-                adminForm.Show();
-                this.Hide();
-                return;
-            }
-
-            // Проверка для зарегистрированных пользователей
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Electronics;Integrated Security=True"))
                 {
                     sqlConnection.Open();
 
-                    string query = "SELECT FirstName FROM Customers WHERE Login = @Login AND Password = @Password";
-                    using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                    // Проверка для администратора
+                    string adminQuery = "SELECT ID FROM Administrators WHERE Login = @Login AND Password = @Password";
+                    using (SqlCommand adminCommand = new SqlCommand(adminQuery, sqlConnection))
                     {
-                        command.Parameters.AddWithValue("@Login", login);
-                        command.Parameters.AddWithValue("@Password", password);
+                        adminCommand.Parameters.AddWithValue("@Login", login);
+                        adminCommand.Parameters.AddWithValue("@Password", password);
 
-                        // Проверка, есть ли пользователь
-                        object result = command.ExecuteScalar();
+                        object adminResult = adminCommand.ExecuteScalar();
 
-                        if (result != null) // Если пользователь найден
+                        if (adminResult != null) // Если администратор найден
                         {
-                            string userName = result.ToString(); // Получаем имя пользователя
+                            MessageBox.Show("Вы успешно зашли как Администратор!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            AdminForm adminForm = new AdminForm(); // Форма для администратора
+                            adminForm.Show();
+                            this.Hide();
+                            return;
+                        }
+                    }
+
+                    // Проверка для зарегистрированных пользователей
+                    string userQuery = "SELECT FirstName FROM Customers WHERE Login = @Login AND Password = @Password";
+                    using (SqlCommand userCommand = new SqlCommand(userQuery, sqlConnection))
+                    {
+                        userCommand.Parameters.AddWithValue("@Login", login);
+                        userCommand.Parameters.AddWithValue("@Password", password);
+
+                        object userResult = userCommand.ExecuteScalar();
+
+                        if (userResult != null) // Если пользователь найден
+                        {
+                            string userName = userResult.ToString(); // Получаем имя пользователя
                             MessageBox.Show($"Вы успешно зашли как {userName}!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             // Переход на форму пользователя
