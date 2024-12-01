@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{474C97E9-8E94-415A-947B-F25CBC29DDE2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Приложение</RootNamespace>
+    <AssemblyName>Приложение</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Ele.cs" />
+    <Compile Include="ElectronicsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElectronicsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ElectronicsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElectronicsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user.Designer.cs">
+      <DependentUpon>user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="register.Designer.cs">
+      <DependentUpon>register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user.resx">
+      <DependentUpon>user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="register.resx">
+      <DependentUpon>register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ElectronicsDataSet.xsc">
+      <DependentUpon>ElectronicsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ElectronicsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ElectronicsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ElectronicsDataSet.xss">
+      <DependentUpon>ElectronicsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ElectronicsDataSet1.xsc">
+      <DependentUpon>ElectronicsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ElectronicsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ElectronicsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ElectronicsDataSet1.xss">
+      <DependentUpon>ElectronicsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.CategoryTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.CustomersTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.DeliveriesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.InventoryTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.OrderItemsTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.OrdersTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.PaymentsTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.ProductTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.SuppliersTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\Приложение.ElectronicsDataSet1TableAdapters.WarehouseTableAdapter.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
